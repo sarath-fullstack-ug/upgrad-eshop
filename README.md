@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# upGrad Eshop (Frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based frontend for the upGrad Eshop project.
+This boilerplate provides the UI for product listing, authentication, cart management, checkout, and integrates cleanly with the backend APIs.
 
-## Available Scripts
+## About
+This repository contains the frontend built with Create React App.
+It includes:
 
-In the project directory, you can run:
+- Complete project skeleton
+- Axios API setup
+- Token-based authentication flow
+- Example tests (Navbar + Login)
+- Environment variable documentation
 
-### `npm start`
+This serves as the starter code for the upGrad Eshop frontend assignment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech stack
+- React
+- React Router
+- Redux
+- fetch
+- Node.js (development + build)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup / Install
+1. Clone the repo
+  - git clone https://github.com/<owner>/upgrad-eshop.git
+  - cd upgrad-eshop
 
-### `npm test`
+Quick start:
+  - Copy files into a `create-react-app` generated project or run `npx create-react-app .` in this folder.
+  - Add `.env.local` with `REACT_APP_API_BASE` 
+  - API Base URL: `REACT_APP_API_BASE=https://dev-project-ecommerce.upgrad.dev/api`
+  - Restart the dev server.
+  - Run `npm install` to install dependencies.
+  - Start the app using `npm start`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tests
+- **test: add basic unit tests for Navbar and Login**
+  - Added Jest + React Testing Library basics for login render and navbar link presence.
 
-### `npm run build`
+## Notes
+- Token storage key: `uc_eshop_token`
+- API Base URL: `REACT_APP_API_BASE=https://dev-project-ecommerce.upgrad.dev/api`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Authentication:
+- The server returns the authentication token either in the 
+- `x-auth-token` response header **or** 
+- `token` (JSON response body).
+- The token is stored in `localStorage` under the key: upgrad_eshop_token
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Auth flow notes
+- On `signin`, extract token from:
+- `response.headers['x-auth-token']`, or  
+- `response.data.token`
+- The axios instance in `src/common/api.js` automatically attaches the token to outgoing requests using:
