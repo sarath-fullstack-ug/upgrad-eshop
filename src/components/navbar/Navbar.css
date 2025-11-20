@@ -1,0 +1,206 @@
+/* ---------- fluid topbar (keep previous styles) ---------- */
+.topbar-fluid {
+  width: 100%;
+  background: #3f51b5; /* blue */
+  /* padding: 10px 0; */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* left */
+.topbar-left-fluid {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  margin-left: 18px;
+  cursor: pointer;
+  color: white;
+}
+.logo-box-fluid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-icon-fluid {
+  fill: white;
+  opacity: 0.95;
+}
+.site-name-fluid {
+  color: white;
+  font-weight: 600;
+  user-select: none;
+  font-size: 15px;
+}
+
+/* center */
+.topbar-center-fluid {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* right */
+.topbar-right-fluid {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  margin-right: 18px;
+}
+
+/* nav links */
+.nav-link-fluid {
+  color: #e6eaf6;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+.nav-link-fluid:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+.nav-link-fluid.active {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ---------- red logout button ---------- */
+.logout-btn-red {
+  background: #d32f2f; /* strong red */
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+.logout-btn-red:hover {
+  filter: brightness(0.95);
+}
+
+/* focus styles for accessibility */
+.topbar-left-fluid:focus,
+.topbar-right-fluid .nav-link-fluid:focus,
+.logout-btn-red:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+}
+
+/* ---------- search bar with right icon styles ---------- */
+
+/* form container size */
+.sb-outer-fluid {
+  display: inline-block;
+  width: clamp(280px, 48%, 600px);
+  max-width: 100%;
+}
+
+/* inner pill with left icon, input, and right icon button */
+.sb-inner-fluid-with-icon {
+  position: relative;
+  height: 44px;
+  border-radius: 10px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* left icon */
+.sb-icon-left {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  fill: rgba(255, 255, 255, 0.85);
+  margin-right: 12px;
+  opacity: 0.95;
+}
+
+/* input */
+.sb-input-fluid-with-icon {
+  flex: 1 1 auto;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.95);
+  padding: 10px 40px 10px 8px; /* right padding leaves room for right icon */
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* placeholder color */
+.sb-input-fluid-with-icon::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+/* right icon button inside the input */
+.sb-icon-right-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 28px;
+  width: 28px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Make the right icon visually stand out a bit (slightly brighter) */
+.sb-icon-right {
+  width: 16px;
+  height: 16px;
+  fill: rgba(255, 255, 255, 0.95);
+}
+
+/* hover/focus */
+.sb-icon-right-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+.sb-icon-right-btn:active {
+  transform: translateY(-49%);
+}
+
+/* hidden submit button */
+.sb-submit-hidden {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* small screens */
+@media (max-width: 860px) {
+  .sb-outer-fluid {
+    width: clamp(200px, 70%, 420px);
+  }
+  .site-name-fluid {
+    display: none;
+  }
+  .topbar-left-fluid {
+    margin-left: 10px;
+  }
+  .topbar-right-fluid {
+    margin-right: 10px;
+    gap: 8px;
+  }
+}

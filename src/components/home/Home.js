@@ -1,7 +1,9 @@
 import './Home.css';
 
-function Home() {
-    return <h1>Home Component</h1>
+const Home = () => {
+    return <div className="page-container">
+        <h1>Home Component</h1>
+    </div>
 }
 
 export default Home;

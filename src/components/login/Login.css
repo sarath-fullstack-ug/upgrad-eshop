@@ -1,0 +1,133 @@
+/* page background - subtle off-white like screenshot */
+/* card */
+.login-card {
+  width: 420px;
+  max-width: calc(100% - 32px);
+  background: transparent; /* screenshot shows the form floats on page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* pink circular lock icon area (centered) */
+.login-lock {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.lock-icon {
+  display: block;
+}
+
+/* title */
+.login-title {
+  margin: 0 0 20px 0;
+  font-weight: 500;
+  color: #222;
+  font-size: 20px;
+}
+
+/* form */
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* labels */
+.login-label {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* inputs - pale blue background with subtle border similar to screenshot */
+.login-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #e9f0ff; /* pale-blue */
+  font-size: 14px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  outline: none;
+}
+
+/* input focus */
+.login-input:focus {
+  border-color: rgba(63, 81, 181, 0.9);
+  box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.08);
+}
+
+/* error styles */
+.input-error {
+  border-color: #d32f2f;
+}
+.field-error {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: -6px;
+  margin-bottom: 6px;
+}
+
+/* server error */
+.server-error {
+  color: #d32f2f;
+  background: rgba(211, 47, 47, 0.06);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* sign in button */
+.signin-btn {
+  margin-top: 6px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  background: #3f51b5; /* blue */
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.signin-btn[disabled] {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* signup link */
+.signup-link {
+  margin-top: 12px;
+  width: 100%;
+  text-align: left;
+  font-size: 13px;
+  color: #444;
+}
+
+/* style the Link */
+.signup-link a {
+  color: #6b1b9a; /* purple link similar to screenshot */
+  text-decoration: underline;
+}
+
+/* responsive */
+@media (max-width: 460px) {
+  .login-card {
+    width: 92%;
+    padding: 0 8px;
+  }
+  .login-title {
+    font-size: 18px;
+  }
+}

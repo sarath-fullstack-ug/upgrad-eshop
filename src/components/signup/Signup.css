@@ -1,0 +1,114 @@
+/* page layout */
+
+/* card container (transparent background like the screenshot) */
+.signup-card {
+  width: 360px;
+  max-width: calc(100% - 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* lock icon circle */
+.signup-lock {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.lock-icon { display: block; }
+
+/* title */
+.signup-title {
+  margin: 0 0 16px 0;
+  font-weight: 500;
+  color: #222;
+  font-size: 18px;
+}
+
+/* form */
+.signup-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* labels */
+.signup-label {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* inputs */
+.signup-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+  font-size: 14px;
+  outline: none;
+  box-shadow: none;
+}
+
+/* subtle focus */
+.signup-input:focus {
+  border-color: rgba(63,81,181,0.9);
+  box-shadow: 0 0 0 3px rgba(63,81,181,0.06);
+}
+
+/* error styles */
+.input-error { border-color: #d32f2f; }
+.field-error {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: -6px;
+  margin-bottom: 6px;
+}
+
+/* server error */
+.server-error {
+  color: #d32f2f;
+  background: rgba(211,47,47,0.06);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* signup button (blue) */
+.signup-btn {
+  margin-top: 6px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  background: #3f51b5;
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+}
+
+/* disabled */
+.signup-btn[disabled] { opacity: 0.7; cursor: default; }
+
+/* footer link under button */
+.signup-footer {
+  margin-top: 12px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+}
+.signup-footer a { color: #6b1b9a; text-decoration: underline; }
+
+/* small screens */
+@media (max-width: 420px) {
+  .signup-card { width: 92%; }
+  .signup-title { font-size: 16px; }
+}
